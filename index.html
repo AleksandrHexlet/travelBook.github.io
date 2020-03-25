@@ -6,14 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Mesto</title>
-  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
+  <link rel="stylesheet" href="style.d36eeadfc2b15dd4870c.css">
 
 </head>
 
 <body>
   <div class="root">
     <header class="header root__section">
-      <img src="<%=require('./images/logo.svg').default%>" alt="mesto logo" class="logo">
+      <img src="./images/logo.svg" alt="mesto logo" class="logo">
     </header>
     <div class="profile root__section">
       <div class="user-info">
@@ -46,7 +46,7 @@
     </div>
     <div class="popup">
       <div class="popup__content">
-        <img src="<%=require('./images/logo.svg').default%>" alt="" class="popup__close">
+        <img src="./images/logo.svg" alt="" class="popup__close">
         <h3 class="popup__title">Новое место</h3>
         <form class="popup__form" name="new">
           <input type="text" name="name" class="popup__input popup__input_type_name" placeholder="Название" required
@@ -67,7 +67,7 @@
     <div class="popup popup-edit">
       <div class="popup-edit__content">
         <!-- <img src="./images/close.svg"  -->
-        <img src="<%=require('./images/logo.svg').default%>" alt="" class="popup-edit__close">
+        <img src="./images/logo.svg" alt="" class="popup-edit__close">
         <h3 class="popup-edit__title">Редактировать профиль</h3>
         <form class="popup-edit__form popup__form" name="edit">
           <input id="nameInput" type="text" name="username" class="popup-edit__input popup__input_type_name"
@@ -92,7 +92,7 @@
     <div class="popup popup-bigpic">
       <div class="popup-bigpic__content">
         <!-- <img src="./images/close.svg" -->
-        <img src="<%=require('./images/close.svg').default%>" alt="" class="popup__close_big-pic">
+        <img src="./images/close.svg" alt="" class="popup__close_big-pic">
 
       </div>
     </div>
@@ -101,7 +101,7 @@
   </!DOCTYPE>
 
 
-  <script type="module" src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+  <script type="module" src="main.454224e73072887ef183.js"></script>
 
 </body>
 
