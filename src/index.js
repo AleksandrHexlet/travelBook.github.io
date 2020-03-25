@@ -8,7 +8,7 @@ import {Api} from './script/Api';
 
 (function () {
 const api = new Api ({
-  baseUrl: Node_ENV === 'development'
+  baseUrl: NODE_ENV === 'development'
     ? 'http://praktikum.tk/cohort8'
     : 'https://praktikum.tk/cohort8',
   headers: {

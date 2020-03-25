@@ -9,6 +9,7 @@ const execFile = require('child_process').execFile;
 const pngquant = require('pngquant-bin');
 const imagemin = require('imagemin');
 const imageminPngquant = require('imagemin-pngquant');
+const pngquantExec = execFile(pngquant, ['-o', 'output.png', 'input.png']);
 
 module.exports = {
   entry: {main: './src/index.js'},
