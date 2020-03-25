@@ -57,8 +57,6 @@ const api = new Api ({
       })
       .catch (err => {
         console.log (`Ошибка: ${err}`);
-        // console.log (err);
-        // console.trace ();
       });
 
     api
@@ -67,12 +65,9 @@ const api = new Api ({
         userInfo.updateUserInfo (data);
         userInfo.updateUserAvatar (data);
         console.log (data);
-        // console.trace ();
       })
       .catch (err => {
         console.log (`Ошибка: ${err}`); //При отрицательном ответе выдаём окно с ошибкой из ответа сервера
-        // console.log (err);
-        // console.trace ();
       });
   });
 

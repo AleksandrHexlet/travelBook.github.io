@@ -1,4 +1,4 @@
-.place-card__like-icon {
+/* .place-card__like-icon {
   background: url(../../../images/like-inactive.svg) center no-repeat;
   background-color: transparent;
   border: none;
@@ -6,7 +6,7 @@
   height: 19px;
   cursor: pointer;
   transition: transform .3s linear;
-}
+} */
 
 .place-card__like-icon_liked {
   background-image: url(../../../images/like-active.svg);

@@ -5,6 +5,10 @@ const WebpackMd5Hash = require ('webpack-md5-hash');
 const MiniCssExtractPlugin = require ('mini-css-extract-plugin'); 
 const OptimizeCssAssetsPlugin = require ('optimize-css-assets-webpack-plugin'); // подключаем плагин
 const isDev = process.env.NODE_ENV === 'development'; // создаем переменную для development-сборки
+const execFile = require('child_process').execFile;
+const pngquant = require('pngquant-bin');
+const imagemin = require('imagemin');
+const imageminPngquant = require('imagemin-pngquant');
 
 module.exports = {
   entry: {main: './src/index.js'},
@@ -68,3 +72,6 @@ module.exports = {
     new WebpackMd5Hash (),
   ],
 };
+execFile (pngquant, ['-o', 'output.png', 'input.png'], err => {
+  console.log ('Image minified!');
+});
