@@ -7,16 +7,15 @@ import {UserInfo} from './script/UserInfo';
 import {Api} from './script/Api';
 
 (function () {
-const api = new Api ({
-  baseUrl: NODE_ENV === 'development'
-    ? 'http://praktikum.tk/cohort8'
-    : 'https://praktikum.tk/cohort8',
-  headers: {
-    authorization: '9dd6defc-e7aa-438c-be23-5ee2690dcc48',
-    'Content-Type': 'application/json',
-  },
-});
-
+  const api = new Api ({
+    baseUrl: NODE_ENV === 'development'
+      ? 'http://praktikum.tk/cohort8'
+      : 'https://praktikum.tk/cohort8',
+    headers: {
+      authorization: '9dd6defc-e7aa-438c-be23-5ee2690dcc48',
+      'Content-Type': 'application/json',
+    },
+  });
 
   const form = document.forms.new;
   const formEdit = document.forms.edit;
@@ -53,7 +52,6 @@ const api = new Api ({
       .getPicturesFromServer ()
       .then (data => {
         cardList.render (data);
-        console.log (data);
       })
       .catch (err => {
         console.log (`Ошибка: ${err}`);
@@ -64,7 +62,6 @@ const api = new Api ({
       .then (data => {
         userInfo.updateUserInfo (data);
         userInfo.updateUserAvatar (data);
-        console.log (data);
       })
       .catch (err => {
         console.log (`Ошибка: ${err}`); //При отрицательном ответе выдаём окно с ошибкой из ответа сервера
@@ -160,5 +157,3 @@ const api = new Api ({
       popUpImage.closeImage ();
     });
 }) ();
-
-

@@ -4,25 +4,7 @@ export class FormValidator {
   }
   //проверяем инпуты и добавляем сообщения
   checkInputValidity (input, errorMsg) {
-    /* Можно лучше: удалите else а внутри условия добавьте return
-		 например было: 
-		 if(условие){  
-			 // ваш код 
-		 } else if(условие2){ 
-			 // ваш код 
-		 } 
-		 стало : 
-		 if(условие){  
-				 // ваш код 
-			return; 
-		} 
-	 
-		 if(условие2){ 
-			// ваш код 
-			return; 
-		} 
-	 
-	*/
+    
     if (input.value.length === 0)
       errorMsg.textContent = 'Это обязательное поле';
     else if (input.getAttribute ('type') === 'url' && !input.validity.valid)
