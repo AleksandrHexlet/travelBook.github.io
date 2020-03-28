@@ -133,10 +133,6 @@ import {Api} from './script/Api';
           popupEditProfile.close (popupEditProfile);
         })
         .catch (err => {
-          /* 
-             Можно лучше: закрывать попап следует только если запрос выполнился успешно - только в блоке then
-             Если попап закроется пользователь может подумать, что данные сохранились 
-          */
           popupEditProfile.close (popupEditProfile);
           console.log (`Ошибка: ${err}`);
         });
