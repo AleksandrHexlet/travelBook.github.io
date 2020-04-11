@@ -28,7 +28,6 @@ export class FormValidator {
     const button = form.querySelector ('.popup__button');
 
     function checkValidity (event) {
-      // Надо исправить: ненадо обращатьсяя к классу так, лучше так this.checkInputValidity()
       FormValidator.prototype.checkInputValidity (
         event.target,
         event.target.closest ('div').querySelector (`.popup__input-error`)
