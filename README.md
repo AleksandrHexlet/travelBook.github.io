@@ -7,7 +7,7 @@ RUS
 Сервис предназначен для загрузки, хранения, просмотра своих фото и фото других пользователей. 
 Реализован функционал:
 1) Редактирование информации о пользователе.
-2) Добавление и  возможность поделится фото с другими пользователями путём отправки фото на сервер.
+2) Добавление фото и обмен фото с другими пользователями путём отправки фото на сервер.
 3) Добавления описания для фото.
 4) Загрузка фото других пользователей с сервера.
 5) Просмотр фото в увеличенном размере при клике по картинке.
@@ -16,13 +16,33 @@ RUS
 
 Архитектура :
 Код разделён на классы. Классы находятся в папке src. Все классы импортированны в index.js. Логика (вызовы классов,слушатели,настройка окружения в зависимости от сборки и т.д ) прописаны в index.js и обёрнута в IIFE. 
+
 Код разделен на следующие классы:
-1) class Card - создаёт карточку на основе template и ставит/удаляет лайки
+1) class Api - отправка данных пользователя и фото на сервер. Получение данных с сервера. Promises,fetch запросы,JSON,обработка ошибок.
 2) class CardList - а) создаёт новую карточку от пользователя б) получает данные с сервера и создаёт карточку в) удаляет карточки
 3) class FormValidator - а) Валидация инпутов б) disable and enable submit в) Изменения цвета кнопок
 4) class Popup - увеличение картинки по клику и закрытие картинки
 5) class UserInfo - изменение данные о пользователе
-6) class Api - получение и отправка данныхх не сервер через fetch запросы
+6) class Card - создаёт карточку на основе template и ставит/удаляет лайки
+
+Технологии, используемые в проекте: JavaScript, CSS, HTML, WebPack, NPM, BABEL, GIT. 
+При написании кода использованы : 
+1) Promise
+2) Конструкторы классов
+3) fetch запросы к серверу
+4) работа с JSON
+
+Процесс работы:
+Начало :
+При загрузке страницы срабатывает слушатель и мы отправляем асинхронный fetch запрос с методом GET,токеном,заголовками на сервер,после проверяем ответ сервера и если res.ok ===> загружаем с сервера данные пользователя и фото.
+
+Возможности:
+1) Добавление пользователем картинки :
+Данные из формы добавления новых фото преобразовываем в JSON и с помощью асинхронного fetch запроса с методом PATCH,токеном,заголовками отправляем на сервер.
+2) Изменения данных о пользователе :
+Получаем данные из формы изменения данных о пользователе преобразовываем в JSON-формат и fetch запросом, методом PATCH отправляем на сервер.
+3) На данный момент такие функции как :постановка лайков,удаление карточки,увеличение размера карточки для просмотра, происходят локально,без отправки на сервер.
+
 
 Настроены три ветки для разных задач:
 
@@ -32,9 +52,9 @@ RUS
 
 Вы можете осуществить следующие виды сборки:
 
-1. Командой npm run build В режиме build. Запуск кода осуществляется в браузере.
-2. Командой npm run dev В режиме development.Запуск кода осуществляется в localhost 8080.
-3. Командой npm run deploy В режиме gh-pages.Запуск кода осуществляется в браузере.
+1. Командой npm run build в режиме build. Запуск кода осуществляется в браузере.
+2. Командой npm run dev в режиме development.Запуск кода осуществляется в localhost 8080.
+3. Командой npm run deploy в режиме gh-pages.Запуск кода осуществляется в браузере.
 
 Общие настройки:
 
@@ -51,12 +71,50 @@ RUS
 
 
 Описание:
-Вы можете просматривать фотографии загруженные на сервер другими пользователями, редактировать информацию о владельце, добавлять собственные фото, добавлять описание загружаемых фотографий. Пользователь может добавить фотографию, нажав на кнопку «+». Каждая фотография имеет следующие функции: лайк, удаление и увеличение. Технологии, используемые в проекте: JS, CSS, HTML, WebPack, GIT.
+Вы можете просматривать фотографии загруженные на сервер другими пользователями, редактировать информацию о владельце, добавлять собственные фото, добавлять описание загружаемых фотографий. Пользователь может добавить фотографию, нажав на кнопку «+». Каждая фотография имеет следующие функции: лайк, удаление и увеличение. Технологии, используемые в проекте: JavaScript, CSS, HTML, WebPack, GIT.
 
 
 ENG
 
-You can view photos downloaded to the server by other users, edit information about the owner, add your own photos, add a description of the photos downloaded. You can add a photo by clicking the button. " Each photo has the following functions: click, delete, and zoom. Technologies used in the project: JS, CSS, HTML, WebPack, GIT.
+The service is designed to download, store, view your photos and photos of other users.
+The functionality is realized:
+1) Edit user information.
+2) Add photos and share photos with other users by sending photos to the server.
+3) Add a description for the photo.
+4) Download photos of other users from the server.
+5) View a photo in an enlarged size when clicking on a picture.
+6) picture like
+7) Removal of the picture
+
+Architecture:
+The code is divided into classes. The classes are located in the src folder. All classes imported to index.js. Logic (class calls, listeners, assembly-dependent environment setting, etc.) is written in index.js and wrapped in IIFE.
+
+The code is divided into the following classes:
+1) class Api - send user data and photos to the server. Retrieving data from server. Promises, fetch inquiries, JSON, error handling.
+2) class CardList - a) creates a new card from user b) receives data from the server and creates a card c) deletes cards
+3) class FormValidator - a) Validation of inputs b) disable and enable submit c) Button color changes
+4) class Popup - enlarge the picture by click and close the picture
+5) class UserInfo - change user data
+6) class Card - creates a card based on template and puts/removes likes
+
+Technologies used in the project: JavaScript, CSS, HTML, WebPack, NPM, BABEL, GIT.
+
+Code writing uses:
+1) Promise
+2) Designers of classes
+3) fetch requests to the server
+4) working with JSON
+
+Work process:
+Beginning:
+When loading the page the listener works and we send asynchronous to fetch a request with the GET method, a token, headings for the server, later we check the answer of the server and if res.ok ===> we load data of the user and a photo from the server.
+
+Opportunities:
+1) User adding picture:
+Data from the form of adding new photos is converted to JSON and with the help of asynchronous fetch request with PATCH method, token, headers are sent to the server.
+2) Changes to user data:
+We get data from the form of changing data about the user we convert to JSON-format and fetch request, we send it to the server by PATCH method.
+3) At the moment such functions as: making likes, deleting the card, increasing the size of the card for viewing, occur locally, without sending to the server.
 
 Three branches are configured for different tasks:
 
@@ -82,3 +140,5 @@ General settings:
 
 8. The dev environment is configured with a local server using the webpack-dev-server command
 9. The Api class has set up fetch requests to work with the server.
+
+You can view photos downloaded to the server by other users, edit information about the owner, add your own photos, add a description of the photos downloaded. You can add a photo by clicking the button. " Each photo has the following functions: click, delete, and zoom. Technologies used in the project: JS, CSS, HTML, WebPack, GIT.
