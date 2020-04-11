@@ -3,6 +3,9 @@
 _Версия 1.0.0_
 https://aleksandrhexlet.github.io/travelBook.github.io/
 
+Ссылка на презентацию проекта :
+https://disk.yandex.ru/client/disk/%D0%9F%D1%80%D0%B5%D0%B7%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D0%B8?idApp=client&dialog=slider&idDialog=%2Fdisk%2F%D0%9F%D1%80%D0%B5%D0%B7%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D0%B8%2F%D0%9F%D1%80%D0%B5%D0%B7%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%8FTravel%20Book.mp4 
+
 RUS
 Сервис предназначен для загрузки, хранения, просмотра своих фото и фото других пользователей. 
 Реализован функционал:
